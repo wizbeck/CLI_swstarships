@@ -1,0 +1,35 @@
+check status of gem: git status
+
+use this to add all the files that need to be committed in the directory git add .
+
+initial file commit to git hub: git commit -m "a comment"
+
+git remote add origin "github link of repository" to associate files with that repo.
+
+git push -u origin master, first time set up master repository on github
+
+chmod +x run if new run folder's ls lah is not identical to other files lah
+
+
+Starship app with SWAPI - SSStarwars or SWStarships
+
+1. Greet the user, tell them what the program does. (load data from API before greeting)
+
+2. print out (puts) all the starships available with a number order. if they only show a select few on one page, create a next list to go to the next page of startships until all are gone through.
+
+3. create a go_back method to return to a previous page and before that until it reaches the first page.
+
+4. iterate over the hash to display multiple ships and have a user pick one to see more of the information.
+
+5. collect and display information of selected ship for them to learn more about it the ship they choose.
+
+6. add commands to go back to the list of ships or to return to first page of ships so they can choose another ship.
+
+
+Classes for CLI:
+
+API class - retireve an manipulate the data from the API
+
+CLI class- interaction with the user and running the application
+
+Starship class: stores data of each starship object and holds it to display when user makes an input later.
