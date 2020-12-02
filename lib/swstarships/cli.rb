@@ -7,20 +7,32 @@ class Cli
         puts "Welcome to the Star Wars Starships App"
         puts "loading starship information..."
         Api.load_data
+        menu
     end
 
-    def menu_options
-        
+    def menu
+        puts "Here is a list of all the starships you can inspect."
+        list_starships
+        get_input
     end
     
     def get_input
-        puts "Enter the number that corresponds to the ship you would like to know more about or type 'next' for the next page of starships"
-        gets.chomp
+        puts "Enter a number choice or type 'exit' to exit program"
+        input = gets.chomp
 
+        if input.valid? == true
+            starship.all[input - 1]
+        else
+            puts "Invalid choice. Try again or type 'exit' to exit program"
+            menu
+        end
     end
 
-    def next
 
+    def list_starships
+        Starship.all.each.with_index(1) do |starship, index|
+            puts "#{index}. #{starship.name}"
+        end
     end
     
 end
