@@ -20,7 +20,6 @@ Starship app with SWAPI - SSStarwars or SWStarships
 3. create a go_back method to return to a previous page and before that until it reaches the first page.
 
 4. iterate over the hash to instantiate multiple ship objects and store them in the starship class.
-5.
 
 5. collect and display information of selected ship for them to learn more about it the ship they choose.
 

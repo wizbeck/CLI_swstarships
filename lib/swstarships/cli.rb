@@ -1,7 +1,10 @@
 class Cli
-    #Cli operates the app, 
-    #we want to display a greeting to the user, and have the user input a number to reach the corresponding starship from swapi.
-    #methods help with abstraction and coding more DRY
+    # Cli operates the app, 
+    # we want to: 
+    # display a greeting to the user, and 
+    # have the user input a number to reach the corresponding starship from our array of objects.
+    # if the user inputs something that is not a number(integer) that is not within the range of our array count, spits back an error.
+    # methods help with abstraction and coding more DRY
 
     def start
         puts "Welcome to the Star Wars Starships App"
