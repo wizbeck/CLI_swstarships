@@ -14,20 +14,43 @@ class Cli
     end
 
     def menu
-        puts "Here is a list of all the starships you can inspect."
+        puts "Here is a list of all the starships you can interact with:"
         list_starships
         get_input
     end
     
     def get_input
         puts "Enter a number choice or type 'exit' to exit program"
-        input = gets.chomp.to_i
+        input = gets.chomp.to_i - 1
+            if  input == "exit"
+                exit
+            elsif valid?(input) != true
+                puts "Invalid choice. Try again or type 'exit' to exit program"
+                menu
+            else
+                puts "hang on while we grab the data"
+            end
+    
+        #then we want to check if the input is a valid option. 
+        #valid being: a number/integer, and within the value of the array length.
+        #array length is 36, so input should == 0-35 since dealing with index
+        #thinking of creating another method valid? to determine if an input is valid for DRY code
+        #exit not working. 
+        # if input.valid? == true
+            #starship.all[input].#attr_name  to return that data 
+            #subtracting 1 from user's input should be taken into account prior to displaying starship data
+        # else
+            #puts "Invalid choice. Try again or type 'exit' to exit program"
+            #menu
+        # end
+    binding.pry
+    end
 
-        if input.valid? == true
-            starship.all[input - 1]
-        else
-            puts "Invalid choice. Try again or type 'exit' to exit program"
-            menu
+    def valid?(input)
+        if input == "exit"
+            exit
+        elsif input >= 0 && input < 36
+            true
         end
     end
 
