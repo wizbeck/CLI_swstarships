@@ -21,7 +21,7 @@ class Cli
     
     def get_input
         puts "Enter a number choice or type 'exit' to exit program"
-        input = gets.chomp
+        input = gets.chomp.to_i
 
         if input.valid? == true
             starship.all[input - 1]
