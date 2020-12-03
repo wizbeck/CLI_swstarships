@@ -1,11 +1,12 @@
 # Swstarships
-Database of Starships in Starwars API (SWAPI) that reveals information/specs/history/facts,etc about them.
-The purpose of this app is to showcase quick facts about the starships of starwars, 
-which targets users who are interested in learning more about the starships without having to scour the web in search of basic facts.
+Welcome to the SWstarships gem!
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/swstarships`. To experiment with that code, run `bin/console` for an interactive prompt.
+This application retrieves specific data about the starships in the Star Wars movies from Starwars API (https://swapi.dev/api/starships/) and displays it for the user when choose a starship from the database. Each starship in the database has basic datapoints that the user can learn about. 
 
-TODO: Delete this and the text above, and describe your gem
+This app targets users who are Star Wars enthusiasts that are interested in learning more about the starships that exist in the Star Wars universe.
+
+With minimal user input, the user can see all the starships from the Star Wars API database, and select a certain starship to display its characteristics.
+
 
 ## Installation
 

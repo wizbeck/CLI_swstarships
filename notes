@@ -18,20 +18,10 @@ Starship app with SWAPI - SSStarwars or SWStarships
 Classes for project:
 
 API class - retireve an manipulate the data from the API
+-working
 
 CLI class- interaction with the user and running the application
-then we want to check if the input is a valid option. 
-        valid being: a number/integer, and within the value of the array length.
-        array length is 36, so input should == 0-35 since dealing with index
-        thinking of creating another method valid? to determine if an input is valid for DRY code
-        exit not working. 
-        ex: 
-         if input.valid? == true
-            #starship.all[input].#attr_name  to return that data 
-            #subtracting 1 from user's input should be taken into account prior to displaying starship data
-         else
-            #puts "Invalid choice. Try again or type 'exit' to exit program"
-            #menu
-         end
+-working
 
 Starship class: stores data of each starship object and holds it to display when user makes an input later.
+-working

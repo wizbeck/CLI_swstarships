@@ -1,44 +1,47 @@
 class Cli
-    # Cli operates the app, 
-    # we want to: 
-    # display a greeting to the user, and 
-    # have the user input a number to reach the corresponding starship from our array of objects.
-    # if the user inputs something that is not a number(integer) that is not within the range of our array count, spits back an error.
-    # methods help with abstraction and coding more DRY
-
     def start
-        puts "Welcome to the Star Wars Starships App"
+        puts "Welcome to the Star Wars Starships App!"
         puts "loading starship information..."
+        puts ""
         Api.load_data
         menu
     end
 
     def menu
         puts "Here is a list of all the starships you can interact with:"
+        puts""
         list_starships
+        puts""
+        puts "Enter a number choice or type 'exit' to exit program"
         get_input
     end
     
     def get_input
-        puts "Enter a number choice or type 'exit' to exit program"
-        input = gets.chomp.to_i - 1
+        input = gets.chomp
+        index = input.to_i - 1
             if  input == "exit"
                 exit
-            elsif valid?(input) != true
-                puts "Invalid choice. Try again or type 'exit' to exit program"
+            elsif input == "menu"
                 menu
-            else valid?(input) == true
-                puts "hang on while we grab the data"
-                starship_traits(input)
-                puts "to choose another ship, type 'menu' to see the list of starships to choose from"
+            elsif valid?(index) != true
+                puts "Invalid input. Please Try again."
+                sleep(1)
+                get_input
+            else valid?(index)
+                puts "Hang on while we grab the data..."
+                sleep(1)
+                puts "Here is the data you requested:"
+                puts ""
+                starship_traits(index)
+                puts "To choose another ship, type 'menu' to see the list of starships to choose from"
+                puts "...or 'exit' to exit"
+                get_input
             end
     
-        
-    binding.pry
     end
 
-    def valid?(input)
-        if input >= 0 && input < Starship.all.length
+    def valid?(index)
+        if index >= 0 && index < Starship.all.length
             true
         end
     end
