@@ -26,7 +26,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Instructions:
+
+After the app starts up, it will load the information in and list all the starships.
+After listing the starships, it will request an input from the user.
+If the user enters a valid input, it will retrieve the data on the specific starship that was called on and display that data for the user.
+If the user enters an invalid input, it will prompt the user to try another input or 'exit' to exit the app.
+The only accepted inputs are 'menu', 'exit', and the integer/number that corresponds with the number assigned to the starship.
+Anytime an input is requested, you can exit the program at any point during its runtime.
 
 ## Development
 
