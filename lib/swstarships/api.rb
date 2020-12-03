@@ -1,5 +1,4 @@
 class Api
-#load the starship data, and parse with JSON into a easy-to-manipulate format.
     def self.base_url
         "https://swapi.dev/api/starships/"
     end
@@ -24,7 +23,6 @@ class Api
             end
             page_num += 1
         end
-        #binding.pry
     end
 
 
