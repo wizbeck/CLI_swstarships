@@ -27,29 +27,18 @@ class Cli
             elsif valid?(input) != true
                 puts "Invalid choice. Try again or type 'exit' to exit program"
                 menu
-            else
+            else valid?(input) == true
                 puts "hang on while we grab the data"
+                starship_traits(input)
+                puts "to choose another ship, type 'menu' to see the list of starships to choose from"
             end
     
-        #then we want to check if the input is a valid option. 
-        #valid being: a number/integer, and within the value of the array length.
-        #array length is 36, so input should == 0-35 since dealing with index
-        #thinking of creating another method valid? to determine if an input is valid for DRY code
-        #exit not working. 
-        # if input.valid? == true
-            #starship.all[input].#attr_name  to return that data 
-            #subtracting 1 from user's input should be taken into account prior to displaying starship data
-        # else
-            #puts "Invalid choice. Try again or type 'exit' to exit program"
-            #menu
-        # end
+        
     binding.pry
     end
 
     def valid?(input)
-        if input == "exit"
-            exit
-        elsif input >= 0 && input < 36
+        if input >= 0 && input < Starship.all.length
             true
         end
     end
@@ -59,6 +48,13 @@ class Cli
         Starship.all.each.with_index(1) do |starship, index|
             puts "#{index}. #{starship.name}"
         end
+    end
+
+    def starship_traits(input)
+        puts "Name: #{Starship.all[input].name}"
+        puts "Cargo Capacity: #{Starship.all[input].cargo_capacity}"
+        puts "Hyperdrive Rating: #{Starship.all[input].hyperdrive_rating}"
+        puts "Cost (in credits): #{Starship.all[input].cost_in_credits}"
     end
     
 end
