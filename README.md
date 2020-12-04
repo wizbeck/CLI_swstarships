@@ -5,7 +5,7 @@ This application retrieves specific data about the starships in the Star Wars mo
 
 This app targets users who are Star Wars enthusiasts that are interested in learning basic information about the starships that exist in the Star Wars universe.
 
-With minimal user input, the user can see all the starships from the Star Wars API database, and select a certain starship to display its characteristics.
+With minimal user input, the user can see all the starships and their data from the Star Wars API database, and select a certain starship to display its indivdual characteristics currently available.
 
 
 ## Installation

@@ -8,7 +8,7 @@ class Cli
     end
 
     def menu
-        puts "Here is a list of all the starships you can interact with:"
+        puts "Here is the list of all the starships you can interact with:"
         puts""
         list_starships
         puts""
@@ -20,6 +20,7 @@ class Cli
         input = gets.chomp
         index = input.to_i - 1
             if  input == "exit"
+                puts "Exiting App. May the Force be with you."
                 exit
             elsif input == "menu"
                 menu
@@ -30,11 +31,14 @@ class Cli
             else valid?(index)
                 puts "Hang on while we grab the data..."
                 sleep(1)
-                puts "Here is the data you requested:"
+                puts""
+                puts "Here is the data we currently have on the starship you selected:"
                 puts ""
                 starship_traits(index)
-                puts "To choose another ship, type 'menu' to see the list of starships to choose from"
-                puts "...or 'exit' to exit"
+                puts ""
+                puts "To choose another ship, enter the number of the ship you want to see or..."
+                puts "Type 'menu' to see the list of starships again."
+                puts "You can exit the app at any time by typing 'exit'."
                 get_input
             end
     
