@@ -7,6 +7,7 @@ This app targets users who are Star Wars enthusiasts that are interested in lear
 
 With minimal user input, the user can see all the starships and their data from the Star Wars API database, and select a certain starship to display its indivdual characteristics currently available.
 
+Credit for data goes to https://swapi.dev/ for all data pulled from their API.
 
 ## Installation
 
