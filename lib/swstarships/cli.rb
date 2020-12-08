@@ -18,17 +18,14 @@ class Cli
     
     def get_input
         input = gets.chomp
+        check_input(input)
         index = input.to_i - 1
             if  input == "exit"
                 puts "Exiting App. May the Force be with you."
                 exit
             elsif input == "menu"
                 menu
-            elsif valid?(index) != true
-                puts "Invalid input. Please Try again."
-                sleep(1)
-                get_input
-            else valid?(index)
+            elsif check_input(input) && valid?(index)
                 puts "Hang on while we grab the data..."
                 sleep(1)
                 puts""
@@ -40,6 +37,10 @@ class Cli
                 puts "Type 'menu' to see the list of starships again."
                 puts "You can exit the app at any time by typing 'exit'."
                 get_input
+            else check_input(input) && valid?(index) != true
+                puts "Invalid input. Please Try again."
+                sleep(1)
+                get_input
             end
     
     end
@@ -48,6 +49,9 @@ class Cli
         if index >= 0 && index < Starship.all.length
             true
         end
+    end
+    def check_input(input)
+        input !~ /\D/
     end
 
 
