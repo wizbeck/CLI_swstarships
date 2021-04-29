@@ -25,3 +25,7 @@ CLI class- interaction with the user and running the application
 
 Starship class: stores data of each starship object and holds it to display when user makes an input later.
 -working
+
+(code challenge) keep changes/methods local to original methods:
+    sorted_list = Starship.all.sort_by {|s| s.name}
+    sorted_list.each.with_index(1) do |starship, index|

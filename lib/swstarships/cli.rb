@@ -1,7 +1,22 @@
 class Cli
     def start
-        puts "Welcome to the Star Wars Starships App!"
-        puts "loading starship information..."
+        puts "
+        ░██████╗████████╗░█████╗░██████╗░  ░██╗░░░░░░░██╗░█████╗░██████╗░░██████╗  
+        ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗  ░██║░░██╗░░██║██╔══██╗██╔══██╗██╔════╝  
+        ╚█████╗░░░░██║░░░███████║██████╔╝  ░╚██╗████╗██╔╝███████║██████╔╝╚█████╗░  
+        ░╚═══██╗░░░██║░░░██╔══██║██╔══██╗  ░░████╔═████║░██╔══██║██╔══██╗░╚═══██╗  
+        ██████╔╝░░░██║░░░██║░░██║██║░░██║  ░░╚██╔╝░╚██╔╝░██║░░██║██║░░██║██████╔╝  
+        ╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝  ░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░  
+        
+        ░██████╗████████╗░█████╗░██████╗░  ░██████╗██╗░░██╗██╗██████╗░░██████╗
+        ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗  ██╔════╝██║░░██║██║██╔══██╗██╔════╝
+        ╚█████╗░░░░██║░░░███████║██████╔╝  ╚█████╗░███████║██║██████╔╝╚█████╗░
+        ░╚═══██╗░░░██║░░░██╔══██║██╔══██╗  ░╚═══██╗██╔══██║██║██╔═══╝░░╚═══██╗
+        ██████╔╝░░░██║░░░██║░░██║██║░░██║  ██████╔╝██║░░██║██║██║░░░░░██████╔╝
+        ╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝  ╚═════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═════╝░"
+        puts ""
+        puts "
+        loading starship information..."
         puts ""
         Api.load_data
         menu
@@ -61,11 +76,13 @@ class Cli
         end
     end
 
+
     def starship_traits(input)
-        puts "Name: #{Starship.all[input].name}"
-        puts "Cargo Capacity: #{Starship.all[input].cargo_capacity}"
-        puts "Hyperdrive Rating: #{Starship.all[input].hyperdrive_rating}"
-        puts "Cost (in credits): #{Starship.all[input].cost_in_credits}"
+        starship = Starship.all[input]
+        puts "Name: #{starship.name}"
+        puts "Cargo Capacity: #{starship.cargo_capacity}"
+        puts "Hyperdrive Rating: #{starship.hyperdrive_rating}"
+        puts "Cost (in credits): #{starship.cost_in_credits}"
     end
     
 end

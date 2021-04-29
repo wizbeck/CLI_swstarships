@@ -14,9 +14,12 @@ attr_accessor :name, :cost_in_credits, :hyperdrive_rating, :cargo_capacity
 
     end
 
-    def self.all
+    def self.all # self's scope is class
+        # self in a self. method the scope is of the mthod type
         @@all
     end
 
 
 end
+
+# Sort printed starship list alphabetically by name attribute 
