@@ -1,16 +1,16 @@
-# Swstarships
-Welcome to the SWstarships gem!
+# SWstarships
+Thanks for checking out my swstarships gem!
 
-This application retrieves specific data about the starships in the Star Wars movies from Starwars API (https://swapi.dev/api/starships/) and displays it for the user when choose a starship from the database. Each starship in the database has basic datapoints that the user can learn about. 
+This cli app retrieves specific data about the starships in the Star Wars movies from [Starwars API](https://swapi.dev/api/starships/) and displays it for the user when they choose a starship from the list. Each starship in the class array has basic datapoints/stats that the user can learn about. 
 
 This app targets users who are Star Wars enthusiasts that are interested in learning basic information about the starships that exist in the Star Wars universe.
 
 With minimal user input, the user can see all the starships and their data from the Star Wars API database, and select a certain starship to display its indivdual characteristics currently available.
 
-Credit for data goes to https://swapi.dev/ for all data pulled from their API.
+Made with Ruby Object Oriented Programming Priniciples (OOP)
 
 ## Installation
-
+(I have not deployed this CLI app as a gem yet, so for now move on to the next section. I will be updating very soon)
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -28,13 +28,18 @@ Or install it yourself as:
 ## Usage
 
 Instructions:
+If forking the repo over to test for yourself, you can run the app with the command:
+```ruby
+    $ bin/run
+```
+(Once I have the gem set up you'll be able to follow the Installation instructions through with now issues.)
 
-After the app starts up, it will load the information in and list all the starships.
-After listing the starships, it will request an input from the user.
-If the user enters a valid input, it will retrieve the data on the specific starship that was called on and display that data for the user.
-If the user enters an invalid input, it will prompt the user to try another input or 'exit' to exit the app.
-The only accepted inputs are 'menu', 'exit', and the integer/number that corresponds with the number assigned to the starship.
-Anytime an input is requested, you can exit the program at any point during its runtime.
+- After the app starts up, it will load the information in and list all the starships.
+- Once the list of starships are displayed, it will request an input from the user.
+- If the user enters a valid input, it will display the data on the specific starship instance that was called on and display that data for the user to the terminal.
+- If the user enters an invalid input, it will prompt the user to try another input or 'exit' to exit the app.
+- Currently, the only accepted inputs are 'menu', 'exit', and the integer/number that corresponds with the number assigned to the starship(index).
+- Anytime an input is requested, you can exit the program at any point during its runtime with 'exit'.
 
 ## Development
 
@@ -44,7 +49,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/swstarships. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/swstarships/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub [here](https://github.com/wizbeck21/swstarships). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/swstarships/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
