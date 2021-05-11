@@ -29,3 +29,10 @@ Starship class: stores data of each starship object and holds it to display when
 (code challenge) keep changes/methods local to original methods:
     sorted_list = Starship.all.sort_by {|s| s.name}
     sorted_list.each.with_index(1) do |starship, index|
+
+
+5/11/21 Notes: 
+- [x] remove unnecessary methods/ refactor code
+- [ ] add help command ( show list of commands and how to reach me)
+- [ ] add more stats for each ship (attr_accessors) from the api characteristics
+- [ ] possibly add a next feature, and split the list of starships up in half to make better user experience?
