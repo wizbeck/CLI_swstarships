@@ -15,10 +15,9 @@ class Cli
         ██████╔╝░░░██║░░░██║░░██║██║░░██║  ██████╔╝██║░░██║██║██║░░░░░██████╔╝
         ╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝  ╚═════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═════╝░"
         puts ""
-        puts "
-        loading starship information..."
+        puts "loading starship information..."
         puts ""
-        Api.load_data
+        Api.load_starships
         menu
     end
 
