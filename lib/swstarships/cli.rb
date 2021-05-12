@@ -13,19 +13,18 @@ class Cli
         ╚█████╗░░░░██║░░░███████║██████╔╝  ╚█████╗░███████║██║██████╔╝╚█████╗░
         ░╚═══██╗░░░██║░░░██╔══██║██╔══██╗  ░╚═══██╗██╔══██║██║██╔═══╝░░╚═══██╗
         ██████╔╝░░░██║░░░██║░░██║██║░░██║  ██████╔╝██║░░██║██║██║░░░░░██████╔╝
-        ╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝  ╚═════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═════╝░"
+        ╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝  ╚═════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═════╝░".colorize(:light_yellow)
         puts ""
-        puts "loading starship information"
+        charprint("loading starship information")
         Api.load_starships
         menu
     end
 
     def menu
-        puts "Here is the list of all the starships you can interact with:"
-        puts""
+        charprint("Here is the list of all the starships you can interact with:")
         list_starships
-        puts""
-        puts "Enter a corresponding number or type 'exit' to exit the archive"
+        puts ""
+        charprint("Enter a corresponding number or type 'exit' to exit the archive")
         get_input
     end
     
@@ -34,32 +33,31 @@ class Cli
         check_input(input)
         index = input.to_i - 1
             if  input == "exit"
-                puts "Stopping"
+                charprint("Stopping")
                     3.times do
                         print "."
                         sleep(0.45)
                     end
-                puts "May the Force be with you."
-                puts "Thank you for using swstarships!"
+                puts ""
+                charprint("May the Force be with you.")
+                sleep(0.3)
+                charprint("Thank you for using swstarships!")
                 exit
             elsif input == "menu"
                 menu
             elsif check_input(input) && valid?(index)
-                puts "Hang on while we grab the data..."
+                charprint("Hang on while we grab the data...")
                 sleep(1)
-                puts""
-                puts "Here is the data we currently have on the #{Starship.all[index].name}:"
+                charprint("Here is the data we currently have on the #{Starship.all[index].name}:")
                 puts ""
                 starship_traits(index)
-                puts ""
-                puts "To choose another ship, enter the number of the ship you want to see"
-                puts "You can Type 'menu' to see the list of starships again."
-                puts "Or you can exit the app at any time by typing 'exit'."
+                charprint("To choose another ship, enter the number of the ship you want to see")
+                charprint("You can Type 'menu' to see the list of starships again.")
+                charprint("Or you can exit the app at any time by typing 'exit'.")
                 get_input
             else check_input(input) && valid?(index) != true
                 sleep(0.3)
-                puts "Invalid input. Please Try again."
-                sleep(1)
+                charprint("Invalid input. Please Try again.")
                 get_input
             end
     
@@ -78,18 +76,26 @@ class Cli
     def list_starships
         Starship.all.each.with_index(1) do |starship, index|
             puts "#{index}. #{starship.name}"
+            sleep(0.1)
         end
     end
 
 
     def starship_traits(input)
         starship = Starship.all[input]
-        puts "Name: #{starship.name}"
-        puts "Cargo Capacity: #{starship.cargo_capacity}"
-        puts "Hyperdrive Rating: #{starship.hyperdrive_rating}"
-        puts "Cost (in credits): #{starship.cost_in_credits}"
+        charprint("Name: #{starship.name}")
+        charprint("Cargo Capacity: #{starship.cargo_capacity}")
+        charprint("Hyperdrive Rating: #{starship.hyperdrive_rating}")
+        charprint("Cost (in credits): #{starship.cost_in_credits}")
+        puts ""
     end
 
-    
+    def charprint(string)
+        string.each_char do |c|
+            print c
+            sleep(0.02)
+        end
+        puts ""
+    end
     
 end
