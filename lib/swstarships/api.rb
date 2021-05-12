@@ -12,8 +12,10 @@ class Api
             Starship.new(starship_data)
         end
             if data["next"].nil?
+                puts "DONE!"
                 break
             end
+            print "."
             page_num += 1
         end
     end

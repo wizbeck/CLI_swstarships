@@ -15,8 +15,7 @@ class Cli
         ██████╔╝░░░██║░░░██║░░██║██║░░██║  ██████╔╝██║░░██║██║██║░░░░░██████╔╝
         ╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝  ╚═════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═════╝░"
         puts ""
-        puts "loading starship information..."
-        puts ""
+        puts "loading starship information"
         Api.load_starships
         menu
     end
@@ -26,7 +25,7 @@ class Cli
         puts""
         list_starships
         puts""
-        puts "Enter a number choice or type 'exit' to exit program"
+        puts "Enter a corresponding number or type 'exit' to exit the archive"
         get_input
     end
     
@@ -35,7 +34,13 @@ class Cli
         check_input(input)
         index = input.to_i - 1
             if  input == "exit"
-                puts "Exiting App. May the Force be with you."
+                puts "Stopping"
+                    3.times do
+                        print "."
+                        sleep(0.45)
+                    end
+                puts "May the Force be with you."
+                puts "Thank you for using swstarships!"
                 exit
             elsif input == "menu"
                 menu
@@ -43,15 +48,16 @@ class Cli
                 puts "Hang on while we grab the data..."
                 sleep(1)
                 puts""
-                puts "Here is the data we currently have on the starship you selected:"
+                puts "Here is the data we currently have on the #{Starship.all[index].name}:"
                 puts ""
                 starship_traits(index)
                 puts ""
-                puts "To choose another ship, enter the number of the ship you want to see or..."
-                puts "Type 'menu' to see the list of starships again."
-                puts "You can exit the app at any time by typing 'exit'."
+                puts "To choose another ship, enter the number of the ship you want to see"
+                puts "You can Type 'menu' to see the list of starships again."
+                puts "Or you can exit the app at any time by typing 'exit'."
                 get_input
             else check_input(input) && valid?(index) != true
+                sleep(0.3)
                 puts "Invalid input. Please Try again."
                 sleep(1)
                 get_input
@@ -83,5 +89,7 @@ class Cli
         puts "Hyperdrive Rating: #{starship.hyperdrive_rating}"
         puts "Cost (in credits): #{starship.cost_in_credits}"
     end
+
+    
     
 end
