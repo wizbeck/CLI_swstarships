@@ -31,7 +31,7 @@ class Cli
     def help
         charprint("Here's all the help I can give you right now:")
         puts ""
-        puts("Commands: \n use \"menu\" - lists the starships again \n  use \"help\" - display this information about usable commands \n  use \"contact\" - displays contact info to reach out about any questions, comments, or concerns to the developer of this app  \n")
+        puts("Commands: \n use \"menu\" - lists the starships again \n use \"help\" - display this information about usable commands \n use \"contact\" - displays contact info to reach out about any questions, comments, or concerns to the developer of this app  \n")
         get_input
     end
     
@@ -94,9 +94,12 @@ class Cli
     def starship_traits(input)
         starship = Starship.all[input]
         charprint("Name: #{starship.name}")
+        charprint("Manufacturer: #{starship.manufacturer}")
         charprint("Cargo Capacity: #{starship.cargo_capacity}")
         charprint("Hyperdrive Rating: #{starship.hyperdrive_rating}")
         charprint("Cost (in credits): #{starship.cost_in_credits}")
+        charprint("Passengers: #{starship.passengers}")
+        charprint("Max Atmosphering Speed: #{starship.max_atmosphering_speed}")
         puts ""
     end
 
