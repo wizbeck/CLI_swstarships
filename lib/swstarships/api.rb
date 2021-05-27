@@ -12,7 +12,7 @@ class Api
             Starship.new(starship_data)
         end
             if data["next"].nil?
-                puts "DONE!"
+                puts "DONE!".colorize(:green)
                 break
             end
             print "."

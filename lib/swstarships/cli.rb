@@ -31,7 +31,7 @@ class Cli
     def help
         charprint("Here's all the help I can give you right now:")
         puts ""
-        puts("Commands: \n( use \"menu\" - lists the starships again \n  use \"help\" - display this information about usable commands \n  use \"contact\" - displays contact info to reach out about any questions, comments, or concerns to the developer of this app ) \n")
+        puts("Commands: \n use \"menu\" - lists the starships again \n  use \"help\" - display this information about usable commands \n  use \"contact\" - displays contact info to reach out about any questions, comments, or concerns to the developer of this app  \n")
         get_input
     end
     
@@ -49,8 +49,7 @@ class Cli
                         sleep(0.45)
                     end
                 puts ""
-                charprint("Stopping")
-                
+                charprint("Stopping".colorize(:red))
                 exit
             elsif input == "menu"
                 menu
