@@ -27,6 +27,13 @@ class Cli
         charprint("Enter a corresponding number or type 'exit' to exit the archive")
         get_input
     end
+
+    def help
+        charprint("Here's all the help I can give you right now:")
+        puts ""
+        puts("Commands: \n( use \"menu\" - lists the starships again \n  use \"help\" - display this information about usable commands \n  use \"contact\" - displays contact info to reach out about any questions, comments, or concerns to the developer of this app ) \n")
+        get_input
+    end
     
     def get_input
         input = gets.chomp
@@ -47,6 +54,8 @@ class Cli
                 exit
             elsif input == "menu"
                 menu
+            elsif input == "help"
+                help
             elsif check_input(input) && valid?(index)
                 charprint("Hang on while we grab the data...")
                 sleep(1)
