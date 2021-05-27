@@ -33,15 +33,17 @@ class Cli
         check_input(input)
         index = input.to_i - 1
             if  input == "exit"
-                charprint("Stopping")
+                charprint("May the Force be with you.")
+                sleep(0.3)
+                charprint("Thank you for using swstarships!")
+
                     3.times do
                         print "."
                         sleep(0.45)
                     end
                 puts ""
-                charprint("May the Force be with you.")
-                sleep(0.3)
-                charprint("Thank you for using swstarships!")
+                charprint("Stopping")
+                
                 exit
             elsif input == "menu"
                 menu

@@ -1,5 +1,5 @@
 class Starship
-attr_accessor :name, :cost_in_credits, :hyperdrive_rating, :cargo_capacity 
+attr_accessor :name, :cost_in_credits, :hyperdrive_rating, :cargo_capacity
 
     @@all = []
 
@@ -14,12 +14,9 @@ attr_accessor :name, :cost_in_credits, :hyperdrive_rating, :cargo_capacity
 
     end
 
-    def self.all # self's scope is class
-        # self in a self. method the scope is of the mthod type
+    def self.all
         @@all
     end
 
 
-end
-
-# Sort printed starship list alphabetically by name attribute 
+end 
