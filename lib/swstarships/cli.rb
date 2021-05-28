@@ -31,7 +31,16 @@ class Cli
     def help
         charprint("Here's all the help I can give you right now:")
         puts ""
-        puts("Commands: \n use \"menu\" - lists the starships again \n use \"help\" - display this information about usable commands \n use \"contact\" - displays contact info to reach out about any questions, comments, or concerns to the developer of this app  \n")
+        puts("Commands: \n use \"menu\" - lists the starships again \n use \"help\" - display this information about usable commands \n use \"contact\" - displays contact info to reach out about any questions, comments, or concerns to the developer of this app \n use\"exit\" or \"quit\" - shuts down and exits program running in terminal \n")
+        get_input
+    end
+
+    def contact
+        charprint("Creator: Wesley Beck")
+        puts "You can contact him via the following information:\n"
+        puts TTY::Link.link_to("GitHub", "https://github.com/wizbeck21")
+        puts TTY::Link.link_to("LinkedIn", "https://www.linkedin.com/in/wesleyabeck/")
+        puts ""
         get_input
     end
     
@@ -39,7 +48,7 @@ class Cli
         input = gets.chomp
         check_input(input)
         index = input.to_i - 1
-            if  input == "exit"
+            if  input == "exit" || input "quit"
                 charprint("May the Force be with you.")
                 sleep(0.3)
                 charprint("Thank you for using swstarships!")
@@ -55,6 +64,8 @@ class Cli
                 menu
             elsif input == "help"
                 help
+            elsif input =="contact"
+                contact
             elsif check_input(input) && valid?(index)
                 charprint("Hang on while we grab the data...")
                 sleep(1)
