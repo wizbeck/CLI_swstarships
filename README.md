@@ -27,18 +27,11 @@ Or install it yourself as:
 
 ## Usage
 
-Instructions:
-If forking the repo over to test for yourself, you can run the app with the command:
-```ruby
-    $ bin/run
-```
-(Once I have the gem set up you'll be able to follow the Installation instructions through with now issues.)
-
-- After the app starts up, it will load the information in and list all the starships.
+- After the gem starts up, it will load the information in and list all the starships.
 - Once the list of starships are displayed, it will request an input from the user.
+- The only inputs that are available are the numbers which correspond to each starship, or the built-in commands, "help", "menu", "contact", and "exit" or "quit".
 - If the user enters a valid input, it will display the data on the specific starship instance that was called on and display that data for the user to the terminal.
 - If the user enters an invalid input, it will prompt the user to try another input or 'exit' to exit the app.
-- Currently, the only accepted inputs are 'menu', 'exit', and the integer/number that corresponds with the number assigned to the starship(index).
 - Anytime an input is requested, you can exit the program at any point during its runtime with 'exit'.
 
 ## Development

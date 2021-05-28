@@ -31,7 +31,7 @@ class Cli
     def help
         charprint("Here's all the help I can give you right now:")
         puts ""
-        puts("Commands: \n use \"menu\" - lists the starships again \n use \"help\" - display this information about usable commands \n use \"contact\" - displays contact info to reach out about any questions, comments, or concerns to the developer of this app \n use\"exit\" or \"quit\" - shuts down and exits program running in terminal \n")
+        puts("Commands: \n use \"menu\" - lists the starships again \n use \"help\" - display this information about usable commands \n use \"contact\" - displays contact info to reach out about any questions, comments, or concerns to the developer of this app \n use \"exit\" or \"quit\" - shuts down and exits program running in terminal \n")
         get_input
     end
 
@@ -48,7 +48,7 @@ class Cli
         input = gets.chomp
         check_input(input)
         index = input.to_i - 1
-            if  input == "exit" || input "quit"
+            if  input == "exit" || input == "quit"
                 charprint("May the Force be with you.")
                 sleep(0.3)
                 charprint("Thank you for using swstarships!")
